@@ -1,4 +1,4 @@
-{% set version = '2.8-1' %}
+{% set version = "2.9-0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/mboost_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/mboost/mboost_{{ version }}.tar.gz
-  sha256: 96a8b7daf5c6bc9240ad2e398867834ec18918c6cbdf64804ddc100a9b717798
+  sha256: c201c74df0fe81f1718ae9ca12676e4246b814a15f551b5be61c12396032dc41
 
 build:
   number: 0
