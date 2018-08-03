@@ -20,10 +20,10 @@ Current build status
 
 Current release info
 ====================
-[![Conda Recipe](https://img.shields.io/badge/recipe-r--mboost-green.svg)](https://anaconda.org/conda-forge/r-mboost)
-[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-mboost.svg)](https://anaconda.org/conda-forge/r-mboost)
-[![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-mboost.svg)](https://anaconda.org/conda-forge/r-mboost)
-[![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-mboost.svg)](https://anaconda.org/conda-forge/r-mboost)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--mboost-green.svg)](https://anaconda.org/conda-forge/r-mboost) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-mboost.svg)](https://anaconda.org/conda-forge/r-mboost) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-mboost.svg)](https://anaconda.org/conda-forge/r-mboost) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-mboost.svg)](https://anaconda.org/conda-forge/r-mboost) |
 
 Installing r-mboost
 ===================
