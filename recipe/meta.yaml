@@ -15,7 +15,8 @@ source:
   sha256: 96a8b7daf5c6bc9240ad2e398867834ec18918c6cbdf64804ddc100a9b717798
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,6 +24,10 @@ build:
 
 requirements:
   build:
+    - posix                # [win]
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+  host:
     - r-base
     - r-matrix
     - r-lattice
@@ -31,9 +36,6 @@ requirements:
     - r-quadprog
     - r-stabs >=0.5_0
     - r-survival
-    - posix                # [win]
-    - {{native}}toolchain  # [win]
-    - gcc                  # [not win]
 
   run:
     - r-base
@@ -44,7 +46,6 @@ requirements:
     - r-quadprog
     - r-stabs >=0.5_0
     - r-survival
-    - libgcc  # [not win]
 
 test:
   commands:
