@@ -1,5 +1,4 @@
-{% set version = '2.8-1' %}
-
+{% set version = '2.9-1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +9,13 @@ package:
 source:
   fn: mboost_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/mboost_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/mboost/mboost_{{ version }}.tar.gz
-  sha256: 96a8b7daf5c6bc9240ad2e398867834ec18918c6cbdf64804ddc100a9b717798
+    - {{ cran_mirror }}/src/contrib/mboost_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/mboost/mboost_{{ version }}.tar.gz
+  sha256: 67ed26093fc2c1e57d7fac842a51a0de0162e448d4dab09c0054baee801f2a0a
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -24,32 +23,36 @@ build:
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-matrix
     - r-lattice
     - r-nnls
-    - r-party >=1.1_0
+    - r-partykit >=1.2_1
     - r-quadprog
     - r-stabs >=0.5_0
     - r-survival
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-matrix
     - r-lattice
     - r-nnls
-    - r-party >=1.1_0
+    - r-partykit >=1.2_1
     - r-quadprog
     - r-stabs >=0.5_0
     - r-survival
 
 test:
   commands:
-    - $R -e "library('mboost')"  # [not win]
+    - $R -e "library('mboost')"           # [not win]
     - "\"%R%\" -e \"library('mboost')\""  # [win]
 
 about:
