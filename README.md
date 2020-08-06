@@ -3,7 +3,7 @@ About r-mboost
 
 Home: https://github.com/boost-R/mboost
 
-Package license: GPL-2
+Package license: GPL-2.0-only
 
 Feedstock license: BSD-3-Clause
 
