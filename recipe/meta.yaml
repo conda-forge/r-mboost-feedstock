@@ -1,4 +1,4 @@
-{% set version = "2.9-2.1" %}
+{% set version = "2.9-3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mboost_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mboost/mboost_{{ version }}.tar.gz
-  sha256: 77d7bb097e2145d3e281874435aa242d33bd5c6468f413d3e76ebf2d1b7b2bea
+  sha256: ae6279cb807f2346b00e4369f778327151928e8570f0a2b54e2301360761e5e2
 
 build:
   merge_build_host: true  # [win]
@@ -55,7 +55,7 @@ test:
 
 about:
   home: https://github.com/boost-R/mboost
-  license: GPL-2
+  license: GPL-2.0-only
   summary: Functional gradient descent algorithm (boosting) for optimizing general risk functions utilizing component-wise (penalised) least squares estimates or regression trees as base-learners for fitting generalized linear, additive and interaction models to potentially high-dimensional data.
   license_family: GPL2
   license_file:
