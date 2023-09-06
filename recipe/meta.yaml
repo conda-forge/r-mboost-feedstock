@@ -1,4 +1,4 @@
-{% set version = "2.9-7" %}
+{% set version = "2.9-8" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mboost_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mboost/mboost_{{ version }}.tar.gz
-  sha256: 0242cb91656280c4bd705643b65674900a1475305d9f80cfc12ef4b5fa069606
+  sha256: d64c6bc630f9279ae5a672e86b296e947ab304df9e22a6af518a7d5a627fd1cb
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
