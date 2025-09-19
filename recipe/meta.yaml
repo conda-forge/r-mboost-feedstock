@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -31,6 +35,7 @@ requirements:
     - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ stdlib("c") }}                # [win]
+    - {{ compiler('fortran') }}        # [osx and arm64]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -44,7 +49,7 @@ requirements:
     - r-partykit >=1.2_1
     - r-quadprog
     - r-stabs >=0.5_0
-    - r-survival
+    - r-survival >=3.2_10
   run:
     - r-base
     - r-matrix
@@ -53,7 +58,7 @@ requirements:
     - r-partykit >=1.2_1
     - r-quadprog
     - r-stabs >=0.5_0
-    - r-survival
+    - r-survival >=3.2_10
 
 test:
   commands:
