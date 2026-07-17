@@ -1,15 +1,15 @@
-{% set version = "2.9-12" %}
+{% set version = "2.9-13" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-mboost
-  version: "{{ version|replace('-', '_') }}"
+  version: {{ version|replace('-', '_') }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/mboost_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mboost/mboost_{{ version }}.tar.gz
-  sha256: cd1b9eda8fe7bb907918f8ed578548702339a53e511d13096c54dd41b80f73f5
+  sha256: be0af5685f96e3346cdf21fe7d5d43aee61d309152b38b994d7f9d098f3f08e7
 
 build:
   number: 0
